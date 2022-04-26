@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 //HTTP logger
-app.use(morgan('combined'))
+//app.use(morgan('combined'))
 
 //Template engine
 app.engine('.hbs', engine({
@@ -26,6 +26,14 @@ app.get('/', (req, res) => {
 app.get('/news', (req, res) => {
   res.render('news')
 })
+
+app.get('/search', (req, res) => {
+  res.render('search')
+})
+
+// app.post('/search', (req, res) => {
+//   res.render('news')
+// })
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
